@@ -237,61 +237,64 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Right Column: Hero Portrait Photograph Presentation */}
+        {/* Right Column: Modern Framed Showcase for Hero Portrait */}
         <div className="lg:col-span-6 relative flex items-center justify-center lg:justify-end">
-
-          <div className="relative w-full max-w-[400px] sm:max-w-[440px] lg:max-w-[460px]">
-
-            {/* Decorative Offset Glow & Gradient Backing */}
-            <div className="absolute -inset-2 sm:-inset-3 bg-gradient-to-tr from-blue-600/20 via-indigo-500/15 to-sky-400/20 rounded-[2.5rem] blur-xl opacity-70 -z-10" />
+          <div className="relative w-full max-w-[420px] sm:max-w-[460px] lg:max-w-[480px]">
             
-            {/* Subtle Offset Geometric Backdrop Layer */}
-            <div className="absolute inset-0 bg-[#0F2A6B]/10 rounded-3xl sm:rounded-[2rem] transform translate-x-3 translate-y-3 -z-10 hidden sm:block border border-blue-900/10" />
+            {/* Ambient Background Glowing Layers */}
+            <div className="absolute -inset-3 sm:-inset-5 bg-gradient-to-tr from-blue-600/25 via-sky-400/20 to-indigo-600/20 rounded-[2.6rem] blur-2xl -z-10 transform -rotate-1" />
+            <div className="absolute -bottom-6 -right-6 w-36 h-36 bg-blue-500/20 rounded-full blur-2xl -z-10" />
 
-            {/* Main Portrait Frame Card */}
-            <div className="relative rounded-3xl sm:rounded-[2rem] overflow-hidden bg-slate-100 border-[3px] border-white shadow-2xl shadow-slate-900/15 aspect-[4/5] group">
+            {/* Decorative Offset Frame Border */}
+            <div className="absolute -inset-2 rounded-[2.5rem] border border-blue-300/60 -z-10 pointer-events-none transform rotate-1" />
+
+            {/* Main Portrait Card Container */}
+            <div className="relative w-full aspect-[4/4.85] rounded-[2rem] sm:rounded-[2.4rem] bg-white border-2 border-white shadow-[0_20px_50px_rgba(15,23,42,0.12)] overflow-hidden group">
               {!imageError ? (
-                <Image
-                  src="/hero.png"
-                  alt="Tharushi Thennakoon - Software Developer & AI Builder"
-                  width={600}
-                  height={750}
-                  priority
-                  className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
-                  onError={() => setImageError(true)}
-                />
+                <>
+                  <Image
+                    src="/hero_new.png"
+                    alt="Tharushi Thennakoon - Software Developer & AI Builder"
+                    fill
+                    priority
+                    sizes="(max-width: 768px) 100vw, 480px"
+                    className="object-cover object-[center_20%] transition-transform duration-700 ease-out group-hover:scale-105"
+                    onError={() => setImageError(true)}
+                  />
+                  {/* Subtle Gradient Vignette at bottom for depth */}
+                  <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-slate-950/40 via-slate-950/10 to-transparent pointer-events-none" />
+                </>
               ) : (
-                <div className="w-full h-full flex flex-col items-center justify-center text-center p-6 bg-slate-900 text-white">
-                  <div className="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center mb-4 text-white">
+                <div className="w-full h-full flex flex-col items-center justify-center text-center p-6 text-slate-700 bg-slate-50">
+                  <div className="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mb-3 text-blue-600">
                     <Terminal className="w-8 h-8" />
                   </div>
-                  <p className="font-bold text-base text-white">Place your photo in</p>
-                  <code className="text-xs bg-black/40 px-2.5 py-1 rounded-md text-[#DBEAFE] mt-1 font-mono">
-                    public/hero.png
+                  <p className="font-bold text-sm text-slate-900">Hero Image</p>
+                  <code className="text-xs bg-slate-200 px-2 py-1 rounded text-slate-800 mt-1 font-mono">
+                    public/hero_new.png
                   </code>
                 </div>
               )}
-
-              {/* Subtle Bottom Gradient Overlay */}
-              <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
             </div>
 
-            {/* Floating Status Badge - Bottom Left */}
-            <div className="absolute -bottom-4 -left-3 sm:-left-6 bg-white/95 backdrop-blur-md px-4 py-2.5 rounded-2xl shadow-xl shadow-slate-900/10 border border-slate-200/80 flex items-center space-x-3 z-20 animate-bounce-slow">
-              <span className="relative flex h-3 w-3">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+            {/* Floating Top-Right Badge: Active Status */}
+            <div className="absolute -top-3 -right-3 sm:-top-4 sm:-right-4 z-20 flex items-center space-x-2 px-3.5 py-2 rounded-2xl bg-white/95 backdrop-blur-md border border-slate-200/80 shadow-lg shadow-slate-200/60">
+              <span className="relative flex h-2.5 w-2.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500" />
               </span>
-              <div className="flex flex-col">
-                <span className="text-[11px] font-bold text-slate-900 uppercase tracking-wider">Available for work</span>
-                <span className="text-[10px] text-slate-500 font-medium">Open to opportunities</span>
-              </div>
+              <span className="text-xs font-bold text-slate-800 tracking-tight">Available for Work</span>
             </div>
 
-            {/* Floating Tech Pill Badge - Top Right */}
-            <div className="absolute -top-3 -right-2 sm:-right-4 bg-white/95 backdrop-blur-md px-3.5 py-2 rounded-2xl shadow-lg shadow-slate-900/10 border border-slate-200/80 flex items-center space-x-2 z-20">
-              <span className="text-blue-600 font-bold text-xs">🚀</span>
-              <span className="text-xs font-bold text-slate-800">AI & Full-Stack</span>
+            {/* Floating Bottom-Left Badge: Builder Info */}
+            <div className="absolute -bottom-4 -left-3 sm:-bottom-5 sm:-left-5 z-20 flex items-center space-x-3 px-4 py-2.5 rounded-2xl bg-white/95 backdrop-blur-md border border-slate-200/80 shadow-lg shadow-slate-200/60">
+              <div className="w-8 h-8 rounded-xl bg-blue-600 flex items-center justify-center text-white shadow-sm text-sm font-bold">
+                ⚡
+              </div>
+              <div className="flex flex-col text-left">
+                <span className="text-xs font-bold text-slate-900 leading-tight">Software & AI Builder</span>
+                <span className="text-[10px] text-slate-500 font-medium leading-tight">Ready to Innovate</span>
+              </div>
             </div>
 
           </div>
