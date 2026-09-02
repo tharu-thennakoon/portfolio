@@ -227,8 +227,10 @@ export default function Hero() {
             </a>
 
             <a
-              href="/resume.pdf"
-              download
+              href="/Tharushi%20Thennakoon_CV.pdf"
+              download="Tharushi_Thennakoon_CV.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center space-x-2 px-6 py-3 rounded-lg bg-white border-[1.5px] border-[#0F172A] text-[#0F172A] text-xs sm:text-sm font-bold tracking-wider hover:bg-[#0F172A] hover:text-white transition-all duration-300 transform hover:-translate-y-0.5 shadow-xs"
             >
               <span>DOWNLOAD CV</span>
