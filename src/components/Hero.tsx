@@ -240,7 +240,7 @@ export default function Hero() {
         {/* Right Column: Modern Framed Showcase for Hero Portrait */}
         <div className="lg:col-span-6 relative flex items-center justify-center lg:justify-end">
           <div className="relative w-full max-w-[420px] sm:max-w-[460px] lg:max-w-[480px]">
-            
+
             {/* Ambient Background Glowing Layers */}
             <div className="absolute -inset-3 sm:-inset-5 bg-gradient-to-tr from-blue-600/25 via-sky-400/20 to-indigo-600/20 rounded-[2.6rem] blur-2xl -z-10 transform -rotate-1" />
             <div className="absolute -bottom-6 -right-6 w-36 h-36 bg-blue-500/20 rounded-full blur-2xl -z-10" />
@@ -277,25 +277,7 @@ export default function Hero() {
               )}
             </div>
 
-            {/* Floating Top-Right Badge: Active Status */}
-            <div className="absolute -top-3 -right-3 sm:-top-4 sm:-right-4 z-20 flex items-center space-x-2 px-3.5 py-2 rounded-2xl bg-white/95 backdrop-blur-md border border-slate-200/80 shadow-lg shadow-slate-200/60">
-              <span className="relative flex h-2.5 w-2.5">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500" />
-              </span>
-              <span className="text-xs font-bold text-slate-800 tracking-tight">Available for Work</span>
-            </div>
 
-            {/* Floating Bottom-Left Badge: Builder Info */}
-            <div className="absolute -bottom-4 -left-3 sm:-bottom-5 sm:-left-5 z-20 flex items-center space-x-3 px-4 py-2.5 rounded-2xl bg-white/95 backdrop-blur-md border border-slate-200/80 shadow-lg shadow-slate-200/60">
-              <div className="w-8 h-8 rounded-xl bg-blue-600 flex items-center justify-center text-white shadow-sm text-sm font-bold">
-                ⚡
-              </div>
-              <div className="flex flex-col text-left">
-                <span className="text-xs font-bold text-slate-900 leading-tight">Software & AI Builder</span>
-                <span className="text-[10px] text-slate-500 font-medium leading-tight">Ready to Innovate</span>
-              </div>
-            </div>
 
           </div>
         </div>
